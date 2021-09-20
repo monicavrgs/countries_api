@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+
+    <title>Country detail</title>
+</head>
+<body>
+    <header>
+        <h1 class='title'><a href="index.html" onclick="loadCountries()">Where in the world?</a></h1>
+        <div class='mode-button' id='mode-container'onclick="changeMode()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Moon</title><path d="M264 480A232 232 0 0132 248c0-94 54-178.28 137.61-214.67a16 16 0 0121.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0121.06 21.06C442.28 426 358 480 264 480z"/></svg>
+        </div>
+    </header>
+    <main>
+        <section class='details-page' id='detail-page'>
+            <button class='back-button' onclick="showCountries()">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+                    <span class='back-button-text'>Back</span>
+                </a>
+            </button>    
+            <div id='country-detail-container' class='country-detail-card'>
+                <img src="#" id="country-detail-img" alt="">
+                    
+                <div class='country-detail-info-container'>
+                    <div id='country-detail-title-container'>
+                        <h1 id='country-detail-title'></h1>
+                    </div>  
+                    <div id='country-detail-info'>
+                        <div class='country-detail-info-col-1'>
+                            <p class='country-detail-info-text'>Native Name: <span id='native-name'></span></p>
+                            <p class='country-detail-info-text'>Population: <span id='population'></span></p>
+                            <p class='country-detail-info-text'>Region: <span id='region'></span></p>
+                            <p class='country-detail-info-text'>Sub Region: <span id='sub-region'></span></p>
+                            <p class='country-detail-info-text'>Capital: <span id='capital'></span></p>
+                        </div>
+                        <div class='country-detail-info-col-2'>
+                            <p class='country-detail-info-text'>Top Level Domain: <span id='domain'></span></p>
+                            <p class='country-detail-info-text'>Currencies: <span id='currencies'></span></p>
+                            <p class='country-detail-info-text'>Languages: <span id='languages'></span></p>
+                        </div>
+                    </div>
+                    <div id="borders-list" class="borders-list">
+                        <span class="borders-text">Borders: </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="detail-script.js"></script>
+
+</body>
+</html>

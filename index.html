@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+
+    <title>Countries API</title>
+</head>
+<body>
+    <header>
+        <h1 class='title'><a href="#" onclick="loadCountries()">Where in the world?</a></h1>
+        <div class='mode-button' id='mode-container'onclick="changeMode()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Moon</title><path d="M264 480A232 232 0 0132 248c0-94 54-178.28 137.61-214.67a16 16 0 0121.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0121.06 21.06C442.28 426 358 480 264 480z"/></svg>
+        </div>
+    </header>
+    <main>
+        <section id='countries-section'>
+            <section id='filter-container'>
+                <input type="text" placeholder="Search for a country..." class='filter-input' id='filter-input' onkeyup="inputFilter(event)">
+                <button class='clear-input-btn' id='clear-input-btn'onclick="clearSearch()"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="close"><rect width="12" height="12" transform="rotate(180 12 12)" opacity="0"/><path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"/></g></g></svg></button>
+
+                <div class='dropdown-filter'  >
+                    <select name='regions' id='dropdown-filter' onchange="regionFilter(event)">
+                        <option value="all">Filter by region</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Americas">Americas</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
+            </section>
+            <section id='countries-container'>
+
+            </section>
+        </section>
+        <section class='details-page' id='detail-section'>
+            <button class='back-button'>
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+                    <span class='back-button-text'>Back</span>
+                </a>
+            </button>    
+            <div id='country-detail-container' class='country-detail-card'>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
